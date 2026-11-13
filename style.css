@@ -1,6 +1,6 @@
 
 :root{--ink:#191919;--muted:#777;--line:#e9e6e1;--cream:#f5f2ee;--blue:#e9eef8;--gold:#d9bd83;--serif:"Times New Roman",Georgia,serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:Arial,"Noto Sans KR",sans-serif;font-weight:300}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:Arial,"Noto Sans KR",sans-serif;font-weight:300}a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:auto}
 .promo{height:30px;background:#202124;color:#fff;text-align:center;padding:8px 10px;font-size:9px;letter-spacing:.2em}
 header{min-height:140px;padding:13px 5vw 16px;border-bottom:1px solid #eee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,.98);position:sticky;top:0;z-index:10}
 .logo{display:flex;align-items:center;justify-content:center;width:100%;height:78px}.logo img{display:block;width:222px;height:80px;object-fit:contain}.nav{display:flex;justify-content:center;gap:35px;font-size:10px;letter-spacing:.16em}.right{position:absolute;right:5vw;top:30px;display:flex;gap:6px}
@@ -116,3 +116,52 @@ footer .tbd{background:transparent;color:#d9bd83;border-color:#6d6247}
 .guide{width:100%;height:auto;margin-top:28px}
 .related img.brand-mark{height:auto;max-height:120px;padding:0 8%}
 @media(max-width:800px){.ingredient-grid.cols-3{grid-template-columns:1fr 1fr}}
+
+/* ── 브랜드 스토리·문구 개편 ─────────────────── */
+.nav{margin-top:16px}
+header{padding-bottom:22px}
+.section-sub{font-size:13px;line-height:1.9;color:#777;margin:0 auto;max-width:560px;word-break:keep-all}
+.card-kr{font-size:12px;letter-spacing:.04em;color:#8a7a55;margin:-2px 0 12px}
+.band p,.words p,.lead{word-break:keep-all}
+.words p+p{margin-top:14px}
+
+.shop-grid a{background:#fff;padding:28px;display:grid;grid-template-columns:42% 58%;align-items:center;min-height:280px}
+.shop-grid img{height:240px;width:100%;object-fit:contain;mix-blend-mode:multiply}
+.shop-grid h3{font:normal 25px/1.2 var(--serif);margin:10px 0}
+.shop-grid p{font-size:11.5px;line-height:1.8;color:#888}
+.shop-grid em{font-style:normal;font-size:9px;letter-spacing:.16em;border-bottom:1px solid #aaa;padding-bottom:5px}
+
+.manifesto{background:#202124;color:#f3f1ec;text-align:center;padding:110px 8vw}
+.manifesto .eyebrow{color:#b9a476}
+.manifesto blockquote{margin:30px auto 0;max-width:720px}
+.manifesto p{font-size:clamp(16px,2vw,21px);line-height:1.9;font-weight:300;margin:0 0 20px;word-break:keep-all;color:#d8d5cf}
+.manifesto strong{font-weight:500;color:#fff}
+.more{display:inline-block;margin-top:26px;font-size:10px;letter-spacing:.2em;border-bottom:1px solid #8d8a84;padding-bottom:6px;color:#f3f1ec}
+.more:hover{border-color:#fff}
+
+.story-hero h1 em{font-style:italic;font-size:1.25em;letter-spacing:.01em}
+.pron{font-size:11px;letter-spacing:.14em;color:#888;margin:-4px 0 22px}
+.origin{max-width:720px;margin:0 auto;padding:100px 24px;text-align:center}
+.origin h2{font-size:clamp(24px,3.2vw,34px);font-weight:400;margin:16px 0 30px;word-break:keep-all}
+.origin p{font-size:14px;line-height:2.1;color:#555;margin:0 0 18px;word-break:keep-all}
+.origin .origin-line{font-size:17px;color:var(--ink);margin:34px 0}
+.origin .origin-q{font:italic normal clamp(20px,2.6vw,26px)/1.6 var(--serif);color:var(--ink);margin:30px 0 0}
+
+.logo-story{padding:90px 7vw;background:#f7f6f3}
+.logo-story-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.logo-plate{background:#fff;padding:64px 12%;display:grid;place-items:center}
+.logo-plate img{width:100%;mix-blend-mode:multiply}
+.logo-story dl{margin:0}
+.logo-story dl div{padding:20px 0;border-bottom:1px solid var(--line)}
+.logo-story dl div:first-child{border-top:1px solid var(--ink)}
+.logo-story dt{font:normal 19px var(--serif);margin-bottom:8px}
+.logo-story dt span{font:300 11px Arial,"Noto Sans KR",sans-serif;color:#8a7a55;margin-left:10px;letter-spacing:.04em}
+.logo-story dd{margin:0;font-size:13px;line-height:1.9;color:#666;word-break:keep-all}
+
+@media(max-width:800px){
+.nav{margin-top:10px}header{padding-bottom:16px}
+.shop-grid a{grid-template-columns:38% 62%;padding:20px;min-height:220px}.shop-grid img{height:190px}.shop-grid h3{font-size:21px}
+.manifesto{padding:80px 26px}.manifesto p br{display:none}
+.origin{padding:72px 24px}
+.logo-story{padding:65px 20px}.logo-story-grid{grid-template-columns:1fr;gap:30px}.logo-plate{padding:44px 16%}
+}
