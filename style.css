@@ -165,3 +165,6 @@ header{padding-bottom:22px}
 .origin{padding:72px 24px}
 .logo-story{padding:65px 20px}.logo-story-grid{grid-template-columns:1fr;gap:30px}.logo-plate{padding:44px 16%}
 }
+.shop-grid h3{font-size:20px;line-height:1.3;margin:10px 0 8px}
+.shop-grid img{height:250px}
+@media(max-width:800px){.shop-grid h3{font-size:17px}.shop-grid img{height:190px}}
