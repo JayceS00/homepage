@@ -110,3 +110,9 @@ footer .tbd{background:transparent;color:#d9bd83;border-color:#6d6247}
 }
 .logo img{mix-blend-mode:multiply}
 @media(max-width:360px){.logo img{width:138px;height:50px}.icon{width:30px;height:30px}.right{right:6px}}
+.ingredient-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.poster.tall{max-width:760px}
+.editorial a{display:block}
+.guide{width:100%;height:auto;margin-top:28px}
+.related img.brand-mark{height:auto;max-height:120px;padding:0 8%}
+@media(max-width:800px){.ingredient-grid.cols-3{grid-template-columns:1fr 1fr}}
