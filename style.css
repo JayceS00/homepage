@@ -459,3 +459,7 @@ background:repeating-linear-gradient(180deg,rgba(255,255,255,0) 0 8px,rgba(255,2
 -webkit-mask-image:radial-gradient(ellipse 34% 100% at 50% 100%,#000,transparent 100%);mask-image:radial-gradient(ellipse 34% 100% at 50% 100%,#000,transparent 100%);animation:ripple 8s linear infinite}
 .spark{position:absolute;left:var(--x);bottom:-4%;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.7) 45%,rgba(255,255,255,0) 100%);filter:blur(.6px);animation:capsule var(--t) linear var(--dl) infinite}
 .theme-sunrise .visual .vertical{z-index:3;color:#fff;text-shadow:0 1px 10px rgba(70,80,140,.5)}
+.marquee-track{align-items:center;line-height:1}
+.marquee-track span{display:block;font:italic 400 34px/1.2 var(--serif)}
+.marquee-track i{display:block;line-height:1;transform:translateY(1px)}
+@media(max-width:800px){.marquee-track span{font-size:25px}}
