@@ -42,3 +42,46 @@ if (tabs.length) {
   addEventListener('scroll', mark, { passive: true });
   mark();
 }
+
+// 스크롤 시 헤더 축소
+const root = document.documentElement;
+root.classList.add('js');
+const onScroll = () => root.classList.toggle('scrolled', scrollY > 80);
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+header.addEventListener('transitionend', setHeaderHeight);
+
+// 스크롤에 맞춰 요소가 떠오르는 연출
+const fadeTargets = document.querySelectorAll(
+  '.section-title, .card, .ingredient-item, .how-item, .words, .official-box, .shop-grid a, .related-grid a, ' +
+  '.manifesto blockquote p, .manifesto .more, .origin > *, .logo-story-grid > *, .band:not(.home-hero) > *, ' +
+  '.info-table, .empty, .policy article, .editorial h2, .editorial .caption, .disclaimer'
+);
+const imageTargets = document.querySelectorAll('.poster, .split img, .guide');
+fadeTargets.forEach((el) => {
+  el.classList.add('reveal');
+  const i = [...el.parentElement.children].indexOf(el);
+  el.style.setProperty('--d', Math.min(i, 5) * 0.09 + 's');
+});
+imageTargets.forEach((el) => el.classList.add('reveal-img'));
+// 화면에 들어온 요소를 표시한다. 위치를 직접 계산해 어떤 브라우저에서도 내용이 숨은 채 남지 않게 한다.
+let pending = [...fadeTargets, ...imageTargets];
+const showVisible = () => {
+  const limit = innerHeight * 0.94;
+  pending = pending.filter((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.top < limit && r.bottom > 0) {
+      el.classList.add('in');
+      return false;
+    }
+    return r.bottom > 0 || (el.classList.add('in'), false);
+  });
+  if (!pending.length) {
+    removeEventListener('scroll', showVisible);
+    removeEventListener('resize', showVisible);
+  }
+};
+addEventListener('scroll', showVisible, { passive: true });
+addEventListener('resize', showVisible);
+addEventListener('load', showVisible);
+showVisible();
