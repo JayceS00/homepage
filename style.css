@@ -409,3 +409,53 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 body::after{opacity:.075}
 .footlogo{font-size:32px;background-image:linear-gradient(100deg,#9a9da2 0%,#ffffff 22%,#b4b7bc 42%,#ffffff 60%,#a3a6ab 78%,#f4f5f6 100%)}
 .foot-tag{background-image:linear-gradient(100deg,#9a9da2 0%,#ffffff 30%,#b4b7bc 55%,#ffffff 80%,#a3a6ab 100%)}
+
+/* ── 해돋이 장면 (사진 색을 기준으로 다시 제작) ─────────── */
+.home-hero::before,.home-hero::after{content:none}
+.band.blue{background:linear-gradient(180deg,#9fb4e4 0%,#b5c3ea 20%,#cbcfee 40%,#dad6ec 56%,#e9dbe6 68%,#f5dcd8 76%,#fbd9c9 80%)}
+.dawn{position:absolute!important;inset:0;z-index:0!important;overflow:hidden;--hz:24%}
+.dawn-halo{position:absolute;left:50%;bottom:var(--hz);width:190vmin;height:120vmin;transform:translate(-50%,50%);opacity:0;
+background:radial-gradient(ellipse at center,rgba(255,236,214,.9) 0%,rgba(255,221,204,.62) 16%,rgba(252,214,208,.34) 34%,rgba(240,214,226,.14) 52%,rgba(240,214,226,0) 70%);
+animation:dawnhalo 6s ease-out .3s forwards}
+.dawn-sun{position:absolute;left:50%;bottom:var(--hz);width:64vmin;height:64vmin;transform:translate(-50%,86%);
+background:radial-gradient(circle,#ffffff 0%,#fffdf3 7%,rgba(255,247,222,.96) 12%,rgba(255,236,196,.78) 20%,rgba(255,224,188,.46) 32%,rgba(254,216,196,.2) 46%,rgba(254,216,196,0) 64%);
+animation:dawnrise 6.5s cubic-bezier(.25,.6,.2,1) .3s forwards,dawnbreathe 9s ease-in-out 7s infinite}
+@keyframes dawnrise{to{transform:translate(-50%,44%)}}
+@keyframes dawnhalo{to{opacity:1}}
+@keyframes dawnbreathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.05)}}
+.dawn-sea{position:absolute;left:0;right:0;bottom:0;height:var(--hz);overflow:hidden;
+background:linear-gradient(180deg,#d9cfe2 0%,#c3c2e0 14%,#b9c2e4 42%,#aebde3 100%)}
+.dawn-sea::before{content:"";position:absolute;inset:0;opacity:0;animation:dawnhalo 5s ease-out 1.6s forwards;
+background:
+ radial-gradient(ellipse 60% 26% at 50% 0,rgba(255,226,208,.85) 0%,rgba(255,226,208,0) 100%),
+ radial-gradient(ellipse 7% 115% at 50% 0,rgba(255,255,250,.98) 0%,rgba(255,244,222,.7) 38%,rgba(255,232,206,.25) 70%,rgba(255,232,206,0) 100%),
+ radial-gradient(ellipse 20% 105% at 50% 0,rgba(255,232,210,.55) 0%,rgba(255,232,210,0) 100%)}
+.dawn-sea::after{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:linear-gradient(180deg,rgba(255,236,224,.75),rgba(255,236,224,0));filter:blur(2px)}
+.dawn-sea b{position:absolute;inset:0;opacity:.55;
+background:repeating-linear-gradient(180deg,rgba(255,255,255,0) 0 9px,rgba(255,255,255,.55) 9px 10px,rgba(255,255,255,0) 10px 23px);
+-webkit-mask-image:radial-gradient(ellipse 13% 100% at 50% 0,#000 0%,rgba(0,0,0,.5) 45%,transparent 100%);mask-image:radial-gradient(ellipse 13% 100% at 50% 0,#000 0%,rgba(0,0,0,.5) 45%,transparent 100%);
+animation:ripple 7s linear infinite}
+.dawn-sea b+b{opacity:.3;background:repeating-linear-gradient(180deg,rgba(255,255,255,0) 0 14px,rgba(255,255,255,.5) 14px 15px,rgba(255,255,255,0) 15px 37px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 70%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 70%,transparent 100%);animation-duration:13s;animation-direction:reverse}
+@keyframes ripple{from{background-position:0 0}to{background-position:0 69px}}
+.dawn-sea b+b{animation-name:ripple2}
+@keyframes ripple2{from{background-position:0 0}to{background-position:0 111px}}
+.story-hero .dawn{--hz:20%}
+.scroll-cue span{background:#fff}
+
+/* ── 선라이즈 글로우 미스트: 사진 속 해돋이 위로 떠오르는 병 ── */
+.theme-sunrise .visual{background:linear-gradient(180deg,#b5c3ea 0%,#cdd0ee 30%,#dcd6ea 52%,#e6dbe8 100%)}
+.theme-sunrise .visual::before{content:none}
+.sun-back{position:absolute;left:-6%;right:-6%;bottom:0;height:78%;background:url(images/bg-sunrise.webp) 60% bottom/cover no-repeat;
+-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 30%);mask-image:linear-gradient(180deg,transparent 0,#000 30%);
+animation:sunback 26s ease-in-out infinite alternate}
+@keyframes sunback{from{transform:scale(1.02)}to{transform:scale(1.12) translateY(-1.5%)}}
+.theme-sunrise .visual img{mix-blend-mode:normal;width:auto;max-width:62%;filter:drop-shadow(0 30px 36px rgba(92,96,150,.3));
+animation:cloudrise 3.2s cubic-bezier(.2,.7,.2,1) both,floatsoft 7.5s ease-in-out 3.2s infinite}
+.sea-front{position:absolute;z-index:2;left:0;right:0;bottom:0;height:20%;pointer-events:none;
+background:linear-gradient(180deg,rgba(190,198,230,0) 0%,rgba(190,198,230,.55) 55%,rgba(196,204,234,.92) 100%)}
+.sea-front::before{content:"";position:absolute;inset:0;opacity:.5;
+background:repeating-linear-gradient(180deg,rgba(255,255,255,0) 0 8px,rgba(255,255,255,.6) 8px 9px,rgba(255,255,255,0) 9px 21px);
+-webkit-mask-image:radial-gradient(ellipse 34% 100% at 50% 100%,#000,transparent 100%);mask-image:radial-gradient(ellipse 34% 100% at 50% 100%,#000,transparent 100%);animation:ripple 8s linear infinite}
+.spark{position:absolute;left:var(--x);bottom:-4%;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.7) 45%,rgba(255,255,255,0) 100%);filter:blur(.6px);animation:capsule var(--t) linear var(--dl) infinite}
+.theme-sunrise .visual .vertical{z-index:3;color:#fff;text-shadow:0 1px 10px rgba(70,80,140,.5)}
