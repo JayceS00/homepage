@@ -297,3 +297,18 @@ background:radial-gradient(circle,rgba(255,240,214,.95) 0%,rgba(255,226,190,.55)
 .js .reveal,.js .reveal-img{opacity:1;transform:none}
 .marquee-track{animation:none}
 }
+
+/* ── 해돋이 연출 (선명한 버전) ─────────────────── */
+.band.blue{background:linear-gradient(180deg,#cfdcf2 0%,#e3e3ee 46%,#f6dfc6 83%,#f9d3ae 100%)}
+.home-hero::before{left:50%;bottom:17%;width:clamp(130px,26vmin,260px);height:clamp(130px,26vmin,260px);border-radius:50%;
+background:radial-gradient(circle at 50% 42%,#fffaf0 0%,#ffe2b0 38%,#ffc98f 72%,#ffb87c 100%);
+box-shadow:0 0 60px 26px rgba(255,214,160,.75),0 0 190px 110px rgba(255,205,150,.45);
+transform:translate(-50%,112%);animation:sunrise 4.2s cubic-bezier(.22,.7,.2,1) .5s forwards,sunglow 7s ease-in-out 4.8s infinite}
+@keyframes sunrise{to{transform:translate(-50%,38%)}}
+@keyframes sunglow{0%,100%{box-shadow:0 0 60px 26px rgba(255,214,160,.75),0 0 190px 110px rgba(255,205,150,.45)}50%{box-shadow:0 0 80px 36px rgba(255,220,170,.85),0 0 240px 140px rgba(255,208,155,.55)}}
+.home-hero::after{left:0;right:0;bottom:0;height:17%;transform:none;animation:none;
+background:
+ radial-gradient(ellipse 22% 100% at 50% 0,rgba(255,236,200,.95) 0%,rgba(255,214,165,.55) 45%,rgba(255,214,165,0) 100%),
+ linear-gradient(180deg,#d9dcec 0%,#e9dfdc 55%,#f3e3d2 100%);
+border-top:1px solid rgba(255,255,255,.75);box-shadow:0 -1px 0 rgba(120,110,120,.25)}
+.scroll-cue span{background:#5d5348}
