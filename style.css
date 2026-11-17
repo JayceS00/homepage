@@ -312,3 +312,22 @@ background:
  linear-gradient(180deg,#d9dcec 0%,#e9dfdc 55%,#f3e3d2 100%);
 border-top:1px solid rgba(255,255,255,.75);box-shadow:0 -1px 0 rgba(120,110,120,.25)}
 .scroll-cue span{background:#5d5348}
+
+/* ── 제품 3종 구성: 세로형 카드, 상단 배너 ─────────── */
+.page-banner img{width:100%;height:auto}
+.shop-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+.shop-grid.two{grid-template-columns:repeat(2,1fr);max-width:860px;margin:0 auto}
+.shop-grid a{display:flex;flex-direction:column;align-items:center;text-align:center;padding:38px 22px 34px;min-height:0}
+.shop-grid img{height:300px;margin-bottom:22px}
+.shop-grid h3{font-size:24px;margin:12px 0 10px}
+.shop-grid p{margin:0 0 18px}
+.poster-duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+.poster-duo .poster{margin:0;height:100%;object-fit:cover}
+.split-title{font:normal clamp(38px,4.6vw,62px)/1.08 var(--serif);margin:15px 0 22px}
+.split-title em{font-style:italic}
+@media(max-width:800px){
+.shop-grid,.shop-grid.two{grid-template-columns:1fr 1fr;gap:10px}
+.shop-grid a{padding:24px 12px 26px}.shop-grid img{height:190px;margin-bottom:14px}.shop-grid h3{font-size:19px}
+.shop-grid a:nth-child(3):last-child{grid-column:1/-1}
+.poster-duo{gap:10px;margin-bottom:10px}
+}
