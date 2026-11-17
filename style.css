@@ -331,3 +331,46 @@ border-top:1px solid rgba(255,255,255,.75);box-shadow:0 -1px 0 rgba(120,110,120,
 .shop-grid a:nth-child(3):last-child{grid-column:1/-1}
 .poster-duo{gap:10px;margin-bottom:10px}
 }
+
+/* ── 미스트 모션: 구름·캡슐·해돋이 빛 ─────────────── */
+.page-banner{overflow:hidden}
+.page-banner img{transform-origin:62% 70%;animation:kenburns 28s ease-in-out infinite alternate}
+.split img.drift{transform-origin:70% 75%;animation:kenburns 30s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.1) translateX(-1.6%)}}
+
+.band-cloud{position:relative;overflow:hidden;background:#86abda;padding:170px 8vw 190px}
+.band-cloud::before{content:"";position:absolute;inset:-8% -10%;background:url(images/bg-cloud.webp) center bottom/cover no-repeat;animation:clouddrift 44s ease-in-out infinite alternate}
+.band-cloud::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(96,140,200,.38),rgba(96,140,200,0) 70%)}
+.band-cloud>*{position:relative;z-index:1}
+.band-cloud .eyebrow{color:#fff}
+.band-cloud h2{color:#fff;text-shadow:0 2px 26px rgba(40,84,150,.45)}
+.band-cloud p{color:#f4f8fd;text-shadow:0 1px 14px rgba(40,84,150,.5)}
+@keyframes clouddrift{from{transform:translateX(-5%) scale(1.04)}to{transform:translateX(5%) scale(1.12)}}
+
+.theme-cloud .visual{background:linear-gradient(180deg,#c9dcf5 0%,#e6effa 58%,#fbfdff 100%)}
+.theme-cloud .visual img,.theme-sunrise .visual img{position:relative;z-index:1}
+.capsules{position:absolute;inset:0;overflow:hidden}
+.capsule{position:absolute;left:var(--x);bottom:-8%;width:var(--s);height:var(--s);border-radius:50%;
+background:radial-gradient(circle at 35% 30%,#fff 0%,rgba(255,255,255,.92) 40%,rgba(214,230,250,.75) 100%);
+box-shadow:0 4px 14px rgba(90,130,190,.22),inset -2px -3px 6px rgba(150,185,230,.35);
+animation:capsule var(--t) linear var(--dl) infinite}
+@keyframes capsule{0%{transform:translate(0,0);opacity:0}10%{opacity:.95}50%{transform:translate(var(--sw),-55vh)}90%{opacity:.9}100%{transform:translate(0,-112vh);opacity:0}}
+
+.theme-sunrise .visual{background:linear-gradient(180deg,#d3e0f5 0%,#e9e9f0 48%,#f9e4c9 100%)}
+.theme-sunrise .visual::before{content:"";position:absolute;left:50%;top:60%;width:78%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);
+background:radial-gradient(circle,rgba(255,216,150,.9) 0%,rgba(255,216,150,.4) 38%,rgba(255,216,150,0) 68%);animation:dawnglow 7s ease-in-out infinite}
+@keyframes dawnglow{0%,100%{transform:translate(-50%,-46%) scale(.86);opacity:.7}50%{transform:translate(-50%,-54%) scale(1.08);opacity:1}}
+@media(max-width:800px){.band-cloud{padding:120px 24px 140px}}
+
+/* ── 클라우드 크림 미스트: 구름 위로 떠오르는 병 ─────── */
+.theme-cloud .visual{background:linear-gradient(180deg,#7da7dc 0%,#a4c4eb 46%,#d9e8f8 100%)}
+.theme-cloud .visual img{mix-blend-mode:normal;width:auto;max-width:70%;filter:drop-shadow(0 26px 34px rgba(46,88,150,.28));
+animation:cloudrise 3s cubic-bezier(.2,.7,.2,1) both,floatsoft 7s ease-in-out 3s infinite}
+@keyframes cloudrise{from{transform:translateY(42%);opacity:0}45%{opacity:1}to{transform:translateY(0);opacity:1}}
+@keyframes floatsoft{0%,100%{transform:translateY(0) rotate(-.7deg)}50%{transform:translateY(-18px) rotate(.7deg)}}
+.cloud-back,.cloud-front{position:absolute;left:-16%;right:-16%;background:url(images/bg-cloud.webp) center bottom/cover no-repeat;pointer-events:none}
+.cloud-back{bottom:6%;height:58%;opacity:.9;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 42%);mask-image:linear-gradient(180deg,transparent 0,#000 42%);animation:clouddrift 46s ease-in-out infinite alternate}
+.cloud-front{z-index:2;bottom:-6%;height:40%;background-position:28% bottom;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 62%);mask-image:linear-gradient(180deg,transparent 0,#000 62%);animation:clouddrift2 32s ease-in-out infinite alternate}
+@keyframes clouddrift2{from{transform:translateX(6%) scale(1.1)}to{transform:translateX(-6%) scale(1.02)}}
+.theme-cloud .visual .vertical{z-index:3;color:#fff;text-shadow:0 1px 10px rgba(40,84,150,.5)}
+.theme-cloud .capsule{opacity:.8}
